@@ -1,5 +1,5 @@
 
-import React ,{useState,useEffect} from "react";
+import React ,{useState} from "react";
 import './../styles/App.css';
 import Child from "./Child";
 
@@ -9,18 +9,17 @@ const App = () => {
   const [selectedChild, setSelectedChild] = useState([{
     id:1,
     text:'Child Component 1',
-    option:'option 1',
+    option:'Option 1',
     checked:false,
     background:'red'
   },{
     id:2,
     text:'Child Component 2',
-    option:'option 2',
+    option:'Option 2',
     background:'yellow'
   }]);
 
-  const handleClick=(id)=>{
-    
+  const handleClick=(id)=>{ 
     setSelectedChild(selectedChild.map(child=>{
       if (child.id===id){
         setSelectedOption('Option '+child.id);
@@ -32,7 +31,6 @@ const App = () => {
       }
     }));
   }
-  useEffect(()=>{console.log(selectedChild);},[selectedChild])
   return (
     <div className="parent">
         {/* Do not remove the main div */}
